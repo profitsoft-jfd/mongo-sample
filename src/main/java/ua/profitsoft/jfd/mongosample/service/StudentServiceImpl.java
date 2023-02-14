@@ -91,6 +91,8 @@ public class StudentServiceImpl implements StudentService {
       resolveGroup(dto.getGroupId());
     }
     data.setGroupId(dto.getGroupId());
+    data.setPhoneNumbers(dto.getPhoneNumbers());
+    data.setAddress(dto.getAddress());
     data.setLastUpdateTime(Instant.now());
   }
 
@@ -109,6 +111,8 @@ public class StudentServiceImpl implements StudentService {
         .surname(data.getSurname())
         .birthDate(data.getBirthDate())
         .group(toGroupIdAndName(data.getGroupId()))
+        .phoneNumbers(data.getPhoneNumbers())
+        .address(data.getAddress())
         .lastUpdateTime(data.getLastUpdateTime())
         .build();
   }

@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.extern.jackson.Jacksonized;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Builder
@@ -23,5 +24,9 @@ public class StudentSaveDto {
 
   @NotNull(message = "groupId is required")
   private String groupId;
+
+  private List<String> phoneNumbers;
+
+  private Address address;
 
 }

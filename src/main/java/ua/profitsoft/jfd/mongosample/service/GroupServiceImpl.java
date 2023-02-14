@@ -8,6 +8,7 @@ import ua.profitsoft.jfd.mongosample.dto.GroupSaveDto;
 import ua.profitsoft.jfd.mongosample.repository.GroupRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -25,6 +26,7 @@ public class GroupServiceImpl implements GroupService {
   @Override
   public String createGroup(GroupSaveDto dto) {
     GroupData data = new GroupData();
+    data.setId(UUID.randomUUID().toString());
     copyToData(dto, data);
     GroupData saved = groupRepository.save(data);
     return saved.getId();
